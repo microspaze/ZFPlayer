@@ -35,5 +35,7 @@ Carthage/Build
 # `pod install` in .travis.yml
 #
 # Pods/
-Pods/IJKMediaFramework/
-Pods/Target Support Files/IJKMediaFramework/
+*/Podfile.lock
+*/Pods/Manifest.lock
+*/Pods/IJKMediaFramework/
+*/Pods/Target Support Files/IJKMediaFramework/

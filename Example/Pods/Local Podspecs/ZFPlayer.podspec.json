@@ -20,6 +20,7 @@
   },
   "requires_arc": true,
   "static_framework": true,
+  "default_subspecs": "Full",
   "pod_target_xcconfig": {
     "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
   },
@@ -59,11 +60,28 @@
       }
     },
     {
-      "name": "ijkplayer",
-      "source_files": "ZFPlayer/Classes/ijkplayer/*.{h,m}",
-      "public_header_files": "ZFPlayer/Classes/ijkplayer/*.h",
+      "name": "IJKPlayer",
+      "source_files": "ZFPlayer/Classes/IJKPlayer/*.{h,m}",
+      "public_header_files": "ZFPlayer/Classes/IJKPlayer/*.h",
       "dependencies": {
         "ZFPlayer/Core": [
+
+        ],
+        "IJKMediaFramework": [
+
+        ]
+      }
+    },
+    {
+      "name": "Full",
+      "dependencies": {
+        "ZFPlayer/ControlView": [
+
+        ],
+        "ZFPlayer/AVPlayer": [
+
+        ],
+        "ZFPlayer/IJKPlayer": [
 
         ]
       }

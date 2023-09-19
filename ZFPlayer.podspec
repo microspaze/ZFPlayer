@@ -15,10 +15,10 @@ Pod::Spec.new do |s|
     s.author           = { 'renzifeng' => 'zifeng1300@gmail.com' }
     s.source           = { :git => 'https://github.com/renzifeng/ZFPlayer.git', :tag => s.version.to_s }
     s.social_media_url = 'http://weibo.com/zifeng1300'
-    s.ios.deployment_target = '8.0'
+    s.ios.deployment_target = '11.0'
     s.requires_arc = true
     s.static_framework = true
-    s.default_subspec = 'Core'
+    s.default_subspec = 'Full'
     s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
     s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 
@@ -35,17 +35,23 @@ Pod::Spec.new do |s|
         controlView.dependency 'ZFPlayer/Core'
     end
     
-    s.subspec 'AVPlayer' do |avPlayer|
-        avPlayer.source_files = 'ZFPlayer/Classes/AVPlayer/**/*.{h,m}'
-        avPlayer.public_header_files = 'ZFPlayer/Classes/AVPlayer/**/*.h'
-        avPlayer.dependency 'ZFPlayer/Core'
+    s.subspec 'AVPlayer' do |avplayer|
+        avplayer.source_files = 'ZFPlayer/Classes/AVPlayer/**/*.{h,m}'
+        avplayer.public_header_files = 'ZFPlayer/Classes/AVPlayer/**/*.h'
+        avplayer.dependency 'ZFPlayer/Core'
     end
     
-    s.subspec 'ijkplayer' do |ijkplayer|
-        ijkplayer.source_files = 'ZFPlayer/Classes/ijkplayer/*.{h,m}'
-        ijkplayer.public_header_files = 'ZFPlayer/Classes/ijkplayer/*.h'
+    s.subspec 'IJKPlayer' do |ijkplayer|
+        ijkplayer.source_files = 'ZFPlayer/Classes/IJKPlayer/*.{h,m}'
+        ijkplayer.public_header_files = 'ZFPlayer/Classes/IJKPlayer/*.h'
         ijkplayer.dependency 'ZFPlayer/Core'
         ijkplayer.dependency 'IJKMediaFramework'
+    end
+    
+    s.subspec 'Full' do |full|
+        full.dependency 'ZFPlayer/ControlView'
+        full.dependency 'ZFPlayer/AVPlayer'
+        full.dependency 'ZFPlayer/IJKPlayer'
     end
     
 end

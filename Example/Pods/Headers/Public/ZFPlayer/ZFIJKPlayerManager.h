@@ -1,1 +1,1 @@
-../../../../../ZFPlayer/Classes/ijkplayer/ZFIJKPlayerManager.h
+../../../../../ZFPlayer/Classes/IJKPlayer/ZFIJKPlayerManager.h
